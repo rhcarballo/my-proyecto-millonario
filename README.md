@@ -41,3 +41,36 @@ Subir los cambios al repositorio remoto.
 
 Crear en el repositorio local un fichero llamado privado.txt.
 
+    ```code
+    - touch privado.txt
+    ```
+Crear en el repositorio local una carpeta llamada privada.
+
+    ```code
+    - mkdir privada
+    ```
+
+Realizar los cambios oportunos para que tanto el archivo como la carpeta sean ignorados por git.
+
+    ```code
+    - echo "privado.txt" >> .gitignore
+    - echo "/privada" >> .gitignore
+    - git add .
+    - git commit -m "añadido fichero .gitignore"
+        - salida
+        [main 0986155] añadido fichero .gitignore
+        2 files changed, 33 insertions(+), 1 deletion(-)
+        create mode 100644 .gitignore
+        - salida
+    ```
+## Añadir fichero 1.txt
+
+1. Añadir fichero 1.txt
+
+        ```code
+        - touch 1.txt
+        - git add .
+        - git commit -m "añadido 1.txt"
+
+
+
