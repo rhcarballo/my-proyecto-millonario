@@ -36,6 +36,11 @@ Subir los cambios al repositorio remoto.
         b3671c7..2fe8d1c  main -> main
         - salida
     ```
+### Pregunta
+
+Si has clonado el repostorio es necesirio que parte del comando anterior puedo omitir.Justifica tu respuesta en el fichero. 
+
+Al haber clonado el repositorio, podemos omitir algunos pasos, por ejemplo el caso de la creación del README.md. Si creas el fichero junto al repositorio directamente en la plataforma de github, podemos omitir el código necesario para crear el README desde la terminal. 
 
 ## Ignorar archivos
 
@@ -63,14 +68,33 @@ Realizar los cambios oportunos para que tanto el archivo como la carpeta sean ig
         create mode 100644 .gitignore
         - salida
     ```
+
+### Pregunta
+
+el fichero y el directorio privado debe de subir al repositorio si se encuentra añadido al fichero .gitingnore. [Si/No]. Justifica tu respuesta en el fichero.
+
+La respuesta es no. Este tipo de archivos no deben subirse al repositorio, ya que de por sí, Git ignorará todos los archivos que tienen .gitignore. 
+
 ## Añadir fichero 1.txt
 
 1. Añadir fichero 1.txt
 
-        ```code
-        - touch 1.txt
-        - git add .
-        - git commit -m "añadido 1.txt"
+    ```code
+    - touch 1.txt
+    - git add .
+    - git commit -m "añadido 1.txt"
+        - salida
+        [main 08af7d8] añadido 1.txt
+        2 files changed, 33 insertions(+)
+        create mode 100644 1.txt
+        - salida
+    ```
+### Pregunta
 
+Si ejecutado las acciones add y commit, que realiza cada una sobre el/los ficheros. Justifica tu respuesta en el fichero
+
+La acción add, guarda los archivos con las últimas modificaciones realizadas, puede hacerse con archivos específicos (git add nombre-archivo), o de todos los archivos del repositorio (git add .), para posterioirmente subirlos al repositorio
+
+La acción commit tiene la función de añadir un comentario cada vez que vayamos a guardar o subir cambios de los archivos modificados. 
 
 
