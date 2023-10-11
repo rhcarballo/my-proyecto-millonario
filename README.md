@@ -212,7 +212,7 @@ Las ramas permiten que al trabajar en una organización cada trabajador vaya pro
         - salida
     ```
 
-Tras este error, haremos lo que se nos indica en el aviso y procederemos a seguir con la tarea
+- Tras este error, haremos lo que se nos indica en el aviso y procederemos a seguir con la tarea
 
     ```code
     - git add .
@@ -223,4 +223,52 @@ Tras este error, haremos lo que se nos indica en el aviso y procederemos a segui
         - salida
     
     - git checkout main
+        - salida
+        Switched to branch 'main'
+        Your branch is up to date with 'origin/main'.
+        - salida
     ```
+2. Hacer un merge de la rama v0.2 en la rama master/main.
+
+    ```code
+    - git merge v0.2 -m "merge v0.2 sin conflictos"
+        - salida
+        Updating 3286df7..4f0ecf3
+        Fast-forward (no commit created; -m option ignored)
+            2.txt     | Bin 0 -> 8 bytes
+        README.md | 128 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+        2 files changed, 127 insertions(+), 1 deletion(-)
+        create mode 100644 2.txt
+        - salida
+    ```
+
+### Pregunta
+
+Se tendrían que producir conflictos en esta acción. [Si/No] Justifica tu respuesta en el fichero
+
+La respuesta es sí y no, todo depende de un factor. Tenemos que tener en cuenta que en estos casos un conflicto se produce cuando un archivo o fichero se ha modificado de forma diferente en dos ramas distintas. Por lo que en caso de que se haya producido esto, la respueta es sí. Pero en caso de que el archivo se haya modificado desde una sola rama, no tendrían que surgir conflictos. 
+
+## Merge con conflicto
+
+1. En la rama master/main poner Hola en el fichero 1 y hacer commit.
+
+    ```code
+    - git checkout main
+        - salida
+        Already on 'main'                    
+        M       README.md
+        Your branch is ahead of 'origin/main' by 4 commits.
+        (use "git push" to publish your local commits)
+        - salida
+    - echo "Hola" >> 1.txt
+        - salida
+        En línea: 1 Carácter: 16
+        + echo >> "Hola" >> 1.txt
+        +                ~~~~~~~~
+        El flujo de salida de este comando ya está redirigido.
+        + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+        + FullyQualifiedErrorId : StreamAlreadyRedirected
+        - salida
+    
+    - git add .
+    - git commit -m "hola en 1.txt"
