@@ -163,3 +163,54 @@ En este caso hay que buscar un equivalente a touch para windows, por lo que en v
     - echo . > 2.txt
     - git add .
     - git commit -m "añadido 2.txt"
+        - salida
+        [v0.2 d270f72] añadido  2.txt
+        2 files changed, 3 insertions(+), 1 deletion(-)
+        create mode 100644 2.txt
+        - salida
+    ```
+### Pregunta
+
+Cuando estamos trabajando con ramas, cual es su fin, y sentido en organizaciones pequeñas/medianas/grandes. Justifica tu respuesta.
+
+Las ramas permiten que al trabajar en una organización cada trabajador vaya progresando en su parte del trabajo, para luego unir todas las ramas en una sola, lo que sería la rama principal. 
+
+## Creamos rama remota
+
+1. Subir los cambios al repositorio remoto. 
+
+    ```code
+    - git push origin v0.2
+        - salida
+        Enumerating objects: 9, done.
+        Counting objects: 100% (9/9), done.
+        Delta compression using up to 8 threads
+        Compressing objects: 100% (6/6), done.
+        Writing objects: 100% (7/7), 1.48 KiB | 1.48 MiB/s, done.
+        Total 7 (delta 3), reused 0 (delta 0), pack-reused 0
+        remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+        remote:
+        remote: Create a pull request for 'v0.2' on GitHub by visiting:
+        remote:      https://github.com/rhcarballo/my-proyecto-millonario/pull/new/v0.2
+        remote:
+        To https://github.com/rhcarballo/my-proyecto-millonario
+        * [new branch]      v0.2 -> v0.2
+        - salida
+    ```
+
+## Merge directo
+
+1. Posicionarse en la rama master/main según sea tu rama principal.
+
+    ```code
+    - git checkout main
+        - salida
+        error: Your local changes to the following files would be overwritten by checkout:
+        README.md
+        Please commit your changes or stash them before you switch branches.
+        Aborting.
+        - salida
+    ```
+
+Tras este error, haremos lo que se nos indica en el aviso. 
+
