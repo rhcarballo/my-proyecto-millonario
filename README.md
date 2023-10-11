@@ -157,7 +157,9 @@ En un repositorio Git, ___tag___ es una herramienta a la que se le puede denomin
 
 1. Añadir un fichero 2.txt en la rama v0.2.
 
+En este caso hay que buscar un equivalente a touch para windows, por lo que en vez de usar touch usaremos "echo . > 2.txt"
+
     ```code
-    - touch 2.txt
+    - echo . > 2.txt
     - git add .
     - git commit -m "añadido 2.txt"
