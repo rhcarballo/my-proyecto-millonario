@@ -212,5 +212,15 @@ Las ramas permiten que al trabajar en una organización cada trabajador vaya pro
         - salida
     ```
 
-Tras este error, haremos lo que se nos indica en el aviso. 
+Tras este error, haremos lo que se nos indica en el aviso y procederemos a seguir con la tarea
 
+    ```code
+    - git add .
+    - git commit -m "Terminamos el apartado Crear rama remota"
+        - salida
+        [v0.2 0909369] Terminamos el apartado Crear rama remota
+        1 file changed, 52 insertions(+), 1 deletion(-)
+        - salida
+    
+    - git checkout main
+    ```
