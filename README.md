@@ -272,3 +272,18 @@ La respuesta es sí y no, todo depende de un factor. Tenemos que tener en cuenta
     
     - git add .
     - git commit -m "hola en 1.txt"
+        - salida
+        [main a914c8a] hola en 1.txt
+        1 file changed, 49 insertions(+), 1 deletion(-)
+        - salida
+    ```
+
+2. Posicionarse en la rama v0.2 y poner Adiós en el fichero "1.txt" y hacer commit
+
+    ```code
+    - git checkout v0.2
+    - echo "Adios" >> 1.txt
+    - git add .
+    - git commit -m "adios en 1.txt"
+    ```
+
