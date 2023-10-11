@@ -93,8 +93,71 @@ La respuesta es no. Este tipo de archivos no deben subirse al repositorio, ya qu
 
 Si ejecutado las acciones add y commit, que realiza cada una sobre el/los ficheros. Justifica tu respuesta en el fichero
 
-La acción add, guarda los archivos con las últimas modificaciones realizadas, puede hacerse con archivos específicos (git add nombre-archivo), o de todos los archivos del repositorio (git add .), para posterioirmente subirlos al repositorio
+La acción add, guarda los archivos con las últimas modificaciones realizadas, puede hacerse con archivos específicos (git add nombre-archivo), o de todos los archivos del repositorio (git add .), para posterioirmente subirlos al repositorio.
 
 La acción commit tiene la función de añadir un comentario cada vez que vayamos a guardar o subir cambios de los archivos modificados. 
 
+## Crear el tag v0.1
 
+1. Crear un tag v0.1.
+
+    ```code
+    - git tag v0.1
+    ```
+
+___(Hasta este punto, se han realizado las acciones en Linux, ahora trajaré en un windows)___
+
+## Subir el tag v0.1
+
+1. Subir los cambios al repositorio remoto.
+
+    ```code
+    - git push --tag origin master
+        - salida
+        error: src refspec master does not match any
+        error: failed to push some refs to 'https://github.com/rhcarballo/my-proyecto-millonario'
+        - salida
+    ```
+- __Tras haber dado este error, lo he vuelto a intentar pero en vez de escribir master, he probado con main. Esto es lo que se ha documentado:__
+
+    ```code
+    - git push --tag origin main
+        - salida 
+        Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+        To https://github.com/rhcarballo/my-proyecto-millonario
+        * [new tag]         v0.1 -> v0.1
+        - salida
+    ```
+__Ahora que hemos visto que el error se ha solucionado, podemos continuar.__
+
+### Pregunta
+
+¿Qué es un tag sobre un repositorio git, en nuestro caso Github?. Justifica tu respuesta.
+
+En un repositorio Git, ___tag___ es una herramienta a la que se le puede denominar como "etiqueta", ya que se usa para marcar un punto en el historial de ese repositorio, pudiendo hacer y guardar distintas versiones de lo que estamos trabajando.
+
+## Crear una rama v0.2
+
+1. Crear una rama v0.2.
+
+    ```code
+    - git branch v0.2
+    ```
+2. Posiciona tu trabajo en esta rama
+
+    ```code
+    - git checkout v0.2
+        - salida
+        Switched to branch 'v0.2'
+        M       README.md
+        - salida
+    ```
+
+## Añadir fichero 2.txt
+
+1. Añadir un fichero 2.txt en la rama v0.2.
+
+    ```code
+    - touch 2.txt
+    - git add .
+    - git commit -m "añadido 2.txt"
