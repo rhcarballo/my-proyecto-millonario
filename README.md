@@ -278,12 +278,72 @@ La respuesta es sí y no, todo depende de un factor. Tenemos que tener en cuenta
         - salida
     ```
 
-2. Posicionarse en la rama v0.2 y poner Adiós en el fichero "1.txt" y hacer commit
+2. Posicionarse en la rama v0.2 y poner Adiós en el fichero "1.txt" y hacer commit.
+
+nota: Se ha tenido que instalar el editor de texto Vim para que el comando funcione de manera correcta.
 
     ```code
     - git checkout v0.2
     - echo "Adios" >> 1.txt
     - git add .
     - git commit -m "adios en 1.txt"
+        - salida 
+        [v0.2 bd0a9ee] adios en 1.txt
+         1 file changed, 0 insertions(+), 0 deletions(-)
+        PS C:\Users\rober\OneDrive\Escritorio\rhcarballo\my-proyecto-millonario> vim 1.txt
+        - salida
+    ```
+
+3. Posicionarse de nuevo en la rama master/main y hacer un merge con la rama v0.2
+
+    ```code
+    - git checkout master
+        - salida
+        Switched to branch 'main'
+        Your branch is ahead of 'origin/main' by 6 commits.
+        (use "git push" to publish your local commits)
+        - salida
+    
+    - git merge v0.2
+        - salida
+        Merge made by the 'ort' strategy.
+        1.txt | Bin 0 -> 16 bytes
+        1 file changed, 0 insertions(+), 0 deletions(-)
+        - salida
+
+    - vim 1.txt
+        - se entró al editor de texto, para salir de este hay que escribir :wq
+    - git add .
+    - git commit -m "arreglado merge en 1.txt
+        - salida
+        [main 379f8ca] arreglado merge en 1.txt
+        2 files changed, 0 insertions(+), 0 deletions(-)
+         create mode 100644 .1.txt.un~
+        create mode 100644 1.txt~
+        - salida
+    ```
+
+## Listado de ramas
+
+1. Listar las ramas con merge y las ramas sin merge.
+
+    ```code
+    - git branch --merged
+        - salida
+        * main
+        v0.2
+        - salida
+    
+    - git branch --no-merged 
+    ```
+
+### Arreglar conflicto
+
+1. Arreglar conflicto anterior y hacer un commit.
+
+    ```code
+    - vim 1.txt
+    - git add .
+    - git commit -m "arreglado merge en 1.txt"
     ```
 
