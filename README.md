@@ -337,7 +337,7 @@ nota: Se ha tenido que instalar el editor de texto Vim para que el comando funci
     - git branch --no-merged 
     ```
 
-### Arreglar conflicto
+## Arreglar conflicto
 
 1. Arreglar conflicto anterior y hacer un commit.
 
@@ -345,5 +345,48 @@ nota: Se ha tenido que instalar el editor de texto Vim para que el comando funci
     - vim 1.txt
     - git add .
     - git commit -m "arreglado merge en 1.txt"
+        - salida
+        [main e089156] arreglado merge en 1.txt
+        2 files changed, 61 insertions(+), 1 deletion(-)
+        - salida
+    ```
+## Borrar rama
+
+1. Crear un tag v0.2.
+
+    ```code
+    - git tag v0.2
     ```
 
+2. Borrar la rama v0.2.
+
+    ```code
+    - git branch -d v0.2
+        - salida
+        Deleted branch v0.2 (was bd0a9ee).
+        - salida
+    ```
+## Listado de cambios
+
+1. Listar los distintos commits con sus ramas y sus tags.
+
+    ```code 
+    - git config --global alias.list 'log --oneline -- decorate --graph --all'
+    - git list
+        - salida
+        * e089156 (HEAD -> main, tag: v0.2) arreglado merge en 1.txt
+        * 379f8ca arreglado merge en 1.txt
+        *   ab36c11 Merge branch 'v0.2'
+        |\
+        | * bd0a9ee adios en 1.txt
+        * | d262289 hola en 1.txt 2ºintento
+        * | a914c8a hola en 1.txt
+        |/
+        * 4f0ecf3 Terminamos el apartado Crear rama remoto pero este es otro intento del checkout
+        * 0909369 Terminamos el apartado Crear rama remota
+        * d270f72 (origin/v0.2) añadido  2.txt
+        * 0895567 Seguimos con el trabajo pero hay que probar código equivalente a touch
+        - salida
+    ```
+
+#### Fin de documentación.
