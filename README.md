@@ -1,3 +1,6 @@
+Roberto Hernández Carballo  
+1º DAM
+
 # my-proyecto-millonario
 Crear un repositorio en vuestro GitHub llamado my-proyecto-millonario.
 
