@@ -393,3 +393,28 @@ nota: Se ha tenido que instalar el editor de texto Vim para que el comando funci
     ```
 
 #### Fin de documentación.
+
+
+# Manipulación avanzados de Git, GitHub y Markdown II
+
+## Crear una rama v0.2.
+
+1. Crear una rama v0.2.
+
+    ```code
+    - git branch v0.2
+    ```
+2. Posiciona tu carpeta de trabajo en esta rama.
+
+    ```code
+    - git checkout 0.2
+        - salida
+        M	README.md
+        Cambiado a rama 'v0.2'
+        - salida
+    ```
+## Añadir fichero 2.txt
+
+    ```code
+    - touch 2.txt
+    
